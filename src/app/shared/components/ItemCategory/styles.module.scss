@@ -18,10 +18,14 @@
 
 
 .light {
-  &__card {
-    @include card;
-    background-color: $light-card;
-    color: $black;
+  &__seccion {
+
+    margin-bottom: 48px;
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(182px, 1fr));
+      gap: 19px;
+    }
   }
 }
 

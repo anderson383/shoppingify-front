@@ -1,15 +1,17 @@
 import React from "react";
 import styles from "./styles.module.scss";
 
-interface NavListProps {
+interface ToolTipProps {
   children: any
+  tooltip: string
 }
 
-export const NavList:React.FC<NavListProps> = ({ children }) => {
+export const ToolTip:React.FC<ToolTipProps> = ({ children, tooltip }) => {
   const theme = 'light'
   return (
-    <ul className={`${styles[theme + '__nav-list']}`}>
+    <div className={`${styles[theme + '__tooltip']}`}>
+      <div className={`${styles[theme + '__tooltip__content']}`}>{tooltip}</div>
       {children}
-    </ul>
+    </div>
   )
 }

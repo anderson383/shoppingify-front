@@ -3,56 +3,15 @@
 
 .light {
 
-  &__aside-content {
-    height: 100%;
-    width: 100%;
-    background: #FFF0DE;
-  }
-
-  &__list {
-    @include d-flex-column();
-    height: 100%;
-
-    &__header {
-      background: #80485B;
-      border-radius: 24px;
-      display: flex;
-      padding: 18px 27px;
-      position: relative;
-      margin-top: 43px;
-
-      & > div {
-        padding-left: 81px;
-      }
-
-      h2 {
-        color: #ffffff;
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 13px;
-      }
-
-      img {
-        position: absolute;
-        top: -17px;
-        left: 12px;
-      }
-
-    }
-  }
-
-  &__search {
-    position: relative;
-
-    input {
-      padding: 18px 17px;
-      border: 2px solid $orange;
-    }
-
-    button {
-      position: absolute;
-      right: 0;
-      bottom: 0;
+  &__list-item {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 26px;
+    span {
+      flex: 1;
+      word-break: break-all;
     }
   }
 }

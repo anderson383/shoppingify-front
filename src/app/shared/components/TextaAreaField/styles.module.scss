@@ -12,13 +12,8 @@
       font-weight: 500;
     }
 
-    input {
-      border: 2px solid #BDBDBD;
-      box-sizing: border-box;
-      border-radius: 12px;
-      font-size: 14px;
-      font-weight: 500;
-      padding: 21px 17px;
+    textarea {
+      @include form-control();
     }
   }
 

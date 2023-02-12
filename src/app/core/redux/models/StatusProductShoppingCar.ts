@@ -1,5 +1,6 @@
+import {ProductShoppingCar} from "../../../feature/ProductShoppingCar/models/ProductShoppingCar";
 
 
-export interface StatusShoppingCar {
-  list: []
+export interface StatusProductShoppingCar {
+  list: ProductShoppingCar[]
 }

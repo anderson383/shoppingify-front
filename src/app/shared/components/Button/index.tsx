@@ -2,14 +2,18 @@ import React from "react";
 import styles from "./styles.module.scss";
 
 interface ToolTipProps {
-  children: any
+  children?: any,
+  type?: string,
+  color?: string
 }
 
-export const ToolTip:React.FC<ToolTipProps> = ({ children }) => {
+export const Button:React.FC<ToolTipProps> = ({ children, type,color }) => {
   const theme = 'light'
 
   const defaultClass = [
-    'btn-primary'
+    'btn',
+    type,
+    color
   ]
 
   return (

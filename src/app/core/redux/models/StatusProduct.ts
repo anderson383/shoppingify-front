@@ -1,6 +1,6 @@
-import {Product} from "../../../feature/Products/Models/Product";
+import {Product} from "../../../feature/Products/models/Product";
 
 
-export interface StatusProducts {
-  product: Product
+export interface StatusProduct {
+  product: Product[]
 }

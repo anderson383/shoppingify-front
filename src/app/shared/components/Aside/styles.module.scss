@@ -2,66 +2,20 @@
 @import 'src/assets/scss/mixins.scss';
 
 .light {
-  &__header {
-    @include d-flex-column();
-    align-items: center;
+  &__aside {
     height: 100%;
-    position: absolute;
-    left: 0;
-    background-color: $light-card;
-    width: 94px ;
-    nav {
-      @include d-flex-column();
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      flex: 1;
-    }
-  }
-
-  &__nav-list {
-    @include d-flex-column();
-    align-items: center;
-    margin: 0;
-    list-style: none;
-    padding: 0;
-    width: 100%;
-
-    &__item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 45px;
-      width: 100%;
-      position: relative;
-
-      &__active {
-        left: 0;
-        top: 0;
-        position: absolute;
-        width: 6px;
-        background: #F9A109;
-        height: 100%;
-        border-radius: 0px 4px 4px 0px;
-      }
-    }
-  }
-
-  &__cart-shopping {
+    width: 389px;
     position: relative;
-    margin-bottom: 35px;
+    transform: translateX(0%);
+    transition: all 0.6s cubic-bezier(0, 0, 0, 0.99);
+    z-index: 1;
+    overflow-x: hidden;
 
-    &__badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background-color: $red;
-      font-size: 12px;
-      padding: 2px 7px;
-      border-radius: 4px;
+    &__close {
+      margin-right: -389px;
+      visibility: hidden;
     }
   }
-
 }
 
 .dark {

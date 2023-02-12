@@ -2,12 +2,23 @@
 @import 'src/assets/scss/mixins.scss';
 
 .light {
-  &__nav-list {
-    @include d-flex-column();
+  &__item {
+    display: flex;
     align-items: center;
-    margin: 0;
-    list-style: none;
-    padding: 0;
+    justify-content: center;
+    height: 45px;
     width: 100%;
+    position: relative;
+    text-decoration: none !important;
+
+    &__active {
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 6px;
+      background: #F9A109;
+      height: 100%;
+      border-radius: 0px 4px 4px 0px;
+    }
   }
 }

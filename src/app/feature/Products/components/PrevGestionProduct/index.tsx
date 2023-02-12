@@ -1,43 +1,71 @@
 import styles from "./styles.module.scss";
-import {TextField} from "../../../../shared/components/TextField";
-import {TextAreaField} from "../../../../shared/components/TextaAreaField";
-import {SelectField} from "../../../../shared/components/SelectField";
 import {Button} from "../../../../shared/components/Button";
+import React from "react";
+import {Link, useParams} from "react-router-dom";
+import {getOneProduct} from "../../../../core/api/product/ProductRepository";
+import {Product} from "../../models/Product";
+import {Loader} from "../../../../shared/components/Loader";
+import {useFetch} from "../../../../hooks/useFetch";
 
-export const FormGestionProduct = () => {
+export const PrevGestionProduct = () => {
+
+  const params = useParams<{id:string}>()
+
+  const { data: product, loading } = useFetch<Product>(
+    getOneProduct,
+    params.id,
+    [params.id]
+  )
+
+
   const theme = 'light'
   return (
-    <div className={`${styles[theme + '__aside-content']}`}>
-      <div className={`${styles[theme + '__form']} px-44`}>
-        <div className="py-34">
-          <h2 >Add a new item</h2>
-        </div>
-        <form action="" className="flex-1">
-          <TextField id={'input'} label={'Name'} inputProps={{
-            placeholder: 'Enter a name',
-            className: 'mb-18'
-          }}/>
-          <TextAreaField
-            id={'input'} label={'Note (optional)'} inputProps={{
-            placeholder: 'Enter a note',
-            rows: 4,
-            className: 'mb-24'
-          }}/>
-          <TextField id={'input'} label={'Image (optional)'} inputProps={{
-            placeholder: 'Enter a url',
-            className: 'mb-33'
-          }}/>
-          <SelectField />
-        </form>
-        <div className="pb-34 flex justify-center">
-          <Button type="btn-flat">
-            Save
-          </Button>
-          <Button color="btn-primary"  >
-            Save
-          </Button>
+    <>
+      <Loader loading={loading} />
+      <div className={`${styles[theme + '__aside-content']}`}>
+        <div className={`${styles[theme + '__preview']} `}>
+          <div className="px-44">
+            <Link to="/products" className="btn btn-flat btn-flat-primary" >
+            <span className="material-icons invert mr-5">
+              arrow_right_alt
+            </span>
+              back
+            </Link>
+          </div>
+          <div className="overflow-auto flex-1 px-44">
+            {
+              product && (
+                <>
+                  <div className={`${styles[theme + '__preview__image-product']}`} style={{backgroundImage: `url(${product.image})`}} />
+                  <div className={`${styles[theme + '__preview__info']}`}>
+                    <span>name</span>
+                    <p>{product.name}</p>
+                  </div>
+                  <div className={`${styles[theme + '__preview__info']}`}>
+                    <span>category</span>
+                    <p>{product.category?.name}</p>
+                  </div>
+                  <div className={`${styles[theme + '__preview__info']}`}>
+                    <span>note</span>
+                    <p>
+                      {product.note}
+                    </p>
+                  </div>
+                </>
+              )
+            }
+          </div>
+          <div className="py-34 flex justify-center px-44">
+            <Button type="btn-flat">
+              delete
+            </Button>
+            <Button type="btn-primary"  >
+              Add to list
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
+
   )
 }

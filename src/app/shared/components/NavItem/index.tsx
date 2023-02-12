@@ -1,15 +1,26 @@
-import React from "react";
-import styles from "../HeaderLeft/styles.module.scss";
+import * as React from "react";
+import styles from "./styles.module.scss";
+import {NavLink, useMatch, useResolvedPath} from "react-router-dom";
 
-interface NavListProps {
-  children: any
+type NavItemProps = {
+  children?: any,
+  active?: boolean,
+  path: string,
+  className?: string
 }
 
-export const NavList:React.FC<NavListProps> = ({ children }) => {
+export const NavItem:React.FC<NavItemProps> = ({ children,  active, path, className }) => {
   const theme = 'light'
+
+  let resolved = useResolvedPath(path);
+  let match = useMatch({ path: resolved.pathname, end: false });
+
   return (
-    <ul className={`${styles[theme + '__nav-list']}`}>
+    <NavLink to={path}   className={`${styles[theme + '__item']} ${className}`}>
+      {
+        match && (<div className={`${active && styles[theme + '__item__active']}`} />)
+      }
       {children}
-    </ul>
+    </NavLink>
   )
 }
