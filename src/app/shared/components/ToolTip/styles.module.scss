@@ -1,0 +1,13 @@
+@import 'src/assets/scss/colors.module.scss';
+@import 'src/assets/scss/mixins.scss';
+
+.light {
+  &__nav-list {
+    @include d-flex-column();
+    align-items: center;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+}

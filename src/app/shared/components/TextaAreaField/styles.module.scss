@@ -1,0 +1,25 @@
+@import 'src/assets/scss/colors.module.scss';
+@import 'src/assets/scss/mixins.scss';
+
+.light {
+  &__form-control {
+    @include d-flex-column();
+
+    label {
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #000000;
+      font-weight: 500;
+    }
+
+    input {
+      border: 2px solid #BDBDBD;
+      box-sizing: border-box;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 21px 17px;
+    }
+  }
+
+}

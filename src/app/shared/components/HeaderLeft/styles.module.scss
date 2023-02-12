@@ -1,0 +1,36 @@
+@import 'src/assets/scss/colors.module.scss';
+
+@mixin card {
+  position: relative;
+  padding: 13px 16px 17px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 20px;
+
+  &__icon {
+    position: absolute;
+    right: 17px;
+    top: 18px;
+  }
+}
+
+
+.light {
+  &__seccion {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(182px, 1fr));
+      gap: 19px;
+    }
+  }
+}
+
+.dark {
+  &__card {
+    @include card;
+    background-color: $dark-card;
+    color: $white;
+  }
+}

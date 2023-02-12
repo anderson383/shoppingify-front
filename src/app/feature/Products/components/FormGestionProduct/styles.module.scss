@@ -1,0 +1,44 @@
+@import 'src/assets/scss/colors.module.scss';
+@import 'src/assets/scss/mixins.scss';
+
+.light {
+  &__tooltip {
+    position: relative;
+    height: max-content;
+    width: 100%;
+
+
+    &__content {
+      position: absolute;
+      left: 85px;
+      top: 10px;
+      background: #454545;
+      padding: 3px 16px;
+      z-index: 1;
+      display: none;
+      border-radius: 4px;
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      &::before {
+        content: " ";
+        width: 0;
+        height: 0;
+        left: -7px;
+        top: 5px;
+        position: absolute;
+        border-right: 10px solid #454545;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+      }
+    }
+
+
+
+    &:hover >  &__content {
+      display: block;
+    }
+
+  }
+
+}

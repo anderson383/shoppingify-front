@@ -1,0 +1,44 @@
+@import 'src/assets/scss/colors.module.scss';
+@import 'src/assets/scss/mixins.scss';
+
+.light {
+
+  &__aside-content {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__preview {
+    @include d-flex-column();
+    height: 100%;
+
+    &__image-product {
+      border-radius: 25px;
+      width: 300px;
+      height: 219px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      margin-bottom: 53px;
+      img {
+        width: 100%;
+      }
+    }
+
+    &__info {
+      margin-bottom: 36px;
+      span {
+        color: $gray;
+        font-size: 12px;
+        font-weight: 500;
+
+      }
+
+      p {
+        margin-top: 11px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+  }
+}
