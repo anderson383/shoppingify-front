@@ -12,7 +12,7 @@ export const useFetch = <TypeData = any>(repository: Function, params:any, deps:
       .then(setData)
       .catch(setError)
       .finally(() => setLoading(false))
-  }, deps)
+  }, [...deps])
 
   return { data, loading, error }
 }

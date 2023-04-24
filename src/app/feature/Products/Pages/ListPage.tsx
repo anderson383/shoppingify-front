@@ -17,7 +17,7 @@ export const ListPage: React.FC<ListPageProps> = () => {
 
   useEffect(() => {
     dispatchRedux<any>(listCategoryProducts())
-  }, [])
+  }, [dispatchRedux])
 
   useEffect(() => {
     setCategoryProducts(categories)
