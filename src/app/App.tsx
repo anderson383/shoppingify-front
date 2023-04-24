@@ -5,6 +5,7 @@ import {store} from "./core/redux/store";
 import { CookiesProvider } from 'react-cookie'
 import {Session} from "./shared/config/Session";
 import {ToastContainer} from "react-toastify";
+
 import {
   QueryClient,
   QueryClientProvider,
