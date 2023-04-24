@@ -1,6 +1,5 @@
 import LoaderSvg  from "../../../../assets/img/icons/Loader.svg"
 import styles from "./styles.module.scss";
-import React, {useState} from "react";
 
 interface LoaderProps {
   loading: boolean

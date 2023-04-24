@@ -4,4 +4,5 @@ export interface ShoppingCar {
   name: string
   status?: string
   products?: Array<{ pcx:number, product:string }>
+  datehistory?: string
 }

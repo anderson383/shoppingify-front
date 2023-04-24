@@ -26,6 +26,16 @@
     a {
       text-decoration: none;
     }
+
+    a:link, a:visited {
+      color: $black;
+    }
+  }
+
+  &__counterProduct {
+    font-size: 12px;
+    width: 35px;
+    color: $orange !important;
   }
 }
 

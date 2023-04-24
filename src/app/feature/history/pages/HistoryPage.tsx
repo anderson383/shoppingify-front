@@ -1,6 +1,4 @@
-import {ItemCategory} from "../../../shared/components/ItemCategory";
-import React from "react";
-import {ListShoppingHistory} from "../../ShoppingCar/components/ListShoppingHistory";
+import {ListShoppingHistory} from "../components/ListShoppingHistory";
 
 
 export const HistoryPage = () => {

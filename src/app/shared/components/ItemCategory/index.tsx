@@ -1,16 +1,15 @@
 import styles from './styles.module.scss'
 
-import React from "react";
 import {ItemProduct} from "../ItemProduct";
-import {Product} from "../../../feature/Products/models/Product";
 import {Category} from "../../../feature/Category/models/Category";
 
 
 interface ItemProductProps {
-  category: Category
+  category: Category,
+  showCounter?: boolean;
 }
 
-export const ItemCategory:React.FC<ItemProductProps> = ({ category }) => {
+export const ItemCategory:React.FC<ItemProductProps> = ({ category, showCounter }) => {
   const theme = 'light';
   return (
     <div className={`${styles[theme + '__seccion']}`}>
@@ -20,8 +19,13 @@ export const ItemCategory:React.FC<ItemProductProps> = ({ category }) => {
       <div className={`${styles[theme + '__seccion__list']}`}>
         {
           category.products && category.products.map(product =>
-                <ItemProduct key={product.id} product={product} category={{ id: category.id, name: category.name }} />
-            )
+            <ItemProduct
+              key={product.id}
+              product={product}
+              category={{ id: category.id, name: category.name }}
+              showCounter={showCounter}
+            />
+          )
         }
       </div>
     </div>

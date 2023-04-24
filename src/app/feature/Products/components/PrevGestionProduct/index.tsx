@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 import {Button} from "../../../../shared/components/Button";
-import React from "react";
 import {Link, useParams} from "react-router-dom";
 import {getOneProduct} from "../../../../core/api/product/ProductRepository";
 import {Product} from "../../models/Product";
@@ -26,9 +25,9 @@ export const PrevGestionProduct = () => {
         <div className={`${styles[theme + '__preview']} `}>
           <div className="px-44">
             <Link to="/products" className="btn btn-flat btn-flat-primary" >
-            <span className="material-icons invert mr-5">
-              arrow_right_alt
-            </span>
+              <span className="material-icons invert mr-5">
+                arrow_right_alt
+              </span>
               back
             </Link>
           </div>

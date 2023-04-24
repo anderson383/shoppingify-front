@@ -1,8 +1,5 @@
 import styles from "./styles.module.scss";
-import {Button} from "../../../../shared/components/Button";
-import source from '../../../../../assets/img/source.svg'
-import {TextField} from "../../../../shared/components/TextField";
-import React, {useState} from "react";
+import{useState} from "react";
 import {ProductShoppingCar} from "../../../ProductShoppingCar/models/ProductShoppingCar";
 import {useDispatch} from "react-redux";
 import {

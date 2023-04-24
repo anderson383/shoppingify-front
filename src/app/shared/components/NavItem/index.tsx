@@ -1,4 +1,3 @@
-import * as React from "react";
 import styles from "./styles.module.scss";
 import {NavLink, useMatch, useResolvedPath} from "react-router-dom";
 
@@ -13,7 +12,7 @@ export const NavItem:React.FC<NavItemProps> = ({ children,  active, path, classN
   const theme = 'light'
 
   let resolved = useResolvedPath(path);
-  let match = useMatch({ path: resolved.pathname, end: false });
+  let match = useMatch({ path: resolved.pathname, end: true });
 
   return (
     <NavLink to={path}   className={`${styles[theme + '__item']} ${className}`}>

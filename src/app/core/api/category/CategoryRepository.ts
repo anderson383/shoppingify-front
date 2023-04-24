@@ -1,6 +1,4 @@
 import {axiosInstance} from "../../config/axiosConfig";
-import {Exception} from "sass";
-import {AxiosError} from "axios";
 
 
 export const getListCategoryProducts = async () => {
@@ -8,7 +6,7 @@ export const getListCategoryProducts = async () => {
     const { data } = await axiosInstance.get('/category/list-products/')
     return data
   } catch (e:any) {
-    throw new Error('Hubo un error: ' + e.message)
+    console.error('Hubo un error: ' + e.message)
   }
 }
 
@@ -17,6 +15,15 @@ export const getListCategory = async () => {
     const { data } = await axiosInstance.get('/category/list/')
     return data
   } catch (e:any) {
-    throw new Error('Hubo un error: ' + e.message)
+    console.error('Hubo un error: ' + e.message)
+  }
+}
+
+export const getCategoryListHistory = async (id:string) => {
+  try {
+    const { data } = await axiosInstance.get(`/category/history/${id}`)
+    return data
+  } catch (error:any) {
+    console.error('Hubo un error: ' + error.message)
   }
 }

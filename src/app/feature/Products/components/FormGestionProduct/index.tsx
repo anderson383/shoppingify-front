@@ -3,9 +3,8 @@ import styles from "./styles.module.scss";
 import {TextField} from "../../../../shared/components/TextField";
 import {TextAreaField} from "../../../../shared/components/TextaAreaField";
 import {SelectField} from "../../../../shared/components/SelectField";
-import {Button} from "../../../../shared/components/Button";
 import {Link, useNavigate} from "react-router-dom";
-import {ErrorMessage, useFormik} from "formik";
+import {useFormik} from "formik";
 import {useMutation, useQuery} from "react-query";
 import {getListCategory} from "../../../../core/api/category/CategoryRepository";
 import {useEffect, useState} from "react";
@@ -29,7 +28,7 @@ export const FormGestionProduct = () => {
       dispatchRedux<any>(
         listCategoryProducts()
       )
-      navigate('/products')
+      navigate('/')
     }
   })
 
@@ -58,7 +57,7 @@ export const FormGestionProduct = () => {
     }
   )
   const theme = 'light'
-  // @ts-ignore
+
   return (
     <div className={`${styles[theme + '__aside-content']}`}>
       <div className={`${styles[theme + '__form']} px-44`}>
@@ -107,7 +106,7 @@ export const FormGestionProduct = () => {
           />
         </form>
         <div className="pb-34 flex justify-center">
-          <Link to="/products" className="btn btn-flat">
+          <Link to="../" className="btn btn-flat">
             cancel
           </Link>
           <button className="btn btn-primary" form="formProduct" type="submit" >

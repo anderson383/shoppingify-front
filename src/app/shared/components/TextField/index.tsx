@@ -1,15 +1,5 @@
-import React from "react";
 import styles from "./styles.module.scss";
-import {ErrorMessage} from "formik";
 
-interface TextProps {
-  name: any
-  error: any,
-  touched: boolean
-  value: any
-  setValue: () => void,
-  setTouched: () => void,
-}
 
 interface TextFieldProps {
   id?:string

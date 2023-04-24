@@ -1,43 +1,33 @@
 import styles from './styles.module.scss'
 import {NavList} from "../NavList";
 import {NavItem} from "../NavItem";
-import React, {useEffect} from "react";
 import {ToolTip} from "../ToolTip";
 
 import logo from '../../../../assets/img/logo.svg'
 import {handleMenu} from "../../../core/redux/actions/menu/MenuAction";
 import {useDispatch, useSelector} from "react-redux";
 import {StatusGeneral} from "../../../core/redux/models/StatusGeneral";
-import {useLocation, useNavigate} from "react-router-dom";
-import {APP_ROUTES} from "../../../AppRoutes";
+// import {useLocation} from "react-router-dom";
+// import {APP_ROUTES} from "../../../AppRoutes";
 export const HeaderLeft = () => {
   let theme = 'light'
 
-  const rute = '/products'
   const dispatchRedux = useDispatch()
 
-  let location = useLocation();
+  // let location = useLocation();
 
-  const navigate = useNavigate()
 
   const {menu: {showMenu}, product_shopping_car} = useSelector((status:StatusGeneral) => ({
     menu: status.menu,
     product_shopping_car: status.product_shopping_car
   }))
 
-  useEffect(() => {
-    console.log('entre')
-
-    return () => {
-      console.log('sali')
-    }
-  }, [])
 
   const menu = [
     {
       icon: 'format_list_bulleted',
       tooltip: 'Items',
-      path: '/products'
+      path: '/'
     },
     {
       icon: 'replay',
@@ -53,7 +43,7 @@ export const HeaderLeft = () => {
 
   const setShowMenu = () => {
 
-    const mathRoute = APP_ROUTES.find(item => (`/${item.key}` === location.pathname ))
+    // const mathRoute = APP_ROUTES.find(item => (`/${item.key}` === location.pathname ))
 
     // console.log(location, mathRoute, APP_ROUTES, APP_ROUTES.some(item => (`/${item.key}` !== location.pathname )))
 

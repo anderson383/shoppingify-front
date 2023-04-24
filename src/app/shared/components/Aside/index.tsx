@@ -1,11 +1,11 @@
 import styles from './styles.module.scss'
 
-import React, {useEffect, useState} from "react";
+import {useEffect} from "react";
 
 import {FormGestionProduct} from "../../../feature/Products/components/FormGestionProduct";
 import {PrevGestionProduct} from "../../../feature/Products/components/PrevGestionProduct";
 import {ListGestionProduct} from "../../../feature/Products/components/ListGestionProduct";
-import {Route, Routes, useLocation, useMatch} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {useDeviceSize} from "../../../hooks/useDeviceSize";
 import {useDispatch, useSelector} from "react-redux";
@@ -16,22 +16,28 @@ export const Aside = () => {
   let theme = 'light'
   const dispatchRedux = useDispatch()
   let location = useLocation();
-  const { isMobile } = useDeviceSize(375)
+  const { isMobile } = useDeviceSize(1023)
   const {showMenu} = useSelector((status:StatusGeneral) => status.menu)
 
   const clasesMenu = [ !showMenu ? styles[theme + '__aside__close'] : '' ]
   const setShowMenu = (value:boolean) => dispatchRedux<any>( handleMenu(value) )
 
   useEffect(()=> {
-    if (isMobile) setShowMenu(false)
+    if (isMobile) {
+      setShowMenu(false)
+    }
   }, [isMobile])
-  console.log(location)
 
-  const ss = useMatch({ path: 'prev/:id' })
-  console.log(ss)
   return (
     <>
       <aside className={`${styles[theme + '__aside']} ${clasesMenu}`}>
+        <div className={`${styles[theme + '__close_button']}`}>
+          <button onClick={() => setShowMenu(!showMenu)}>
+          <span className="material-symbols-outlined">
+            close
+          </span>
+          </button>
+        </div>
           <TransitionGroup className={`h-100`} >
             <CSSTransition
               timeout={200}
@@ -39,7 +45,7 @@ export const Aside = () => {
               key={location.pathname}
             >
               <Routes location={location}>
-                <Route path="" element={<ListGestionProduct />} />
+                <Route path="*" element={<ListGestionProduct />} />
                 <Route path="prev/:id" element={<PrevGestionProduct />} />
                 <Route path="add" element={<FormGestionProduct />} />
               </Routes>

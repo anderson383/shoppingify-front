@@ -1,7 +1,6 @@
-import React from "react";
+import {useState, useEffect} from "react";
 import {ItemCategory} from "../../../shared/components/ItemCategory";
 import {Category} from "../../Category/models/Category";
-import {getListCategoryProducts} from "../../../core/api/category/CategoryRepository";
 import {useDispatch, useSelector} from "react-redux";
 import {listCategoryProducts} from "../../../core/redux/actions/category/CategoryActions";
 import {StatusGeneral} from "../../../core/redux/models/StatusGeneral";
@@ -14,13 +13,13 @@ interface ListPageProps {
 export const ListPage: React.FC<ListPageProps> = () => {
   const dispatchRedux = useDispatch()
   const categories = useSelector((status:StatusGeneral) => (status.category.categories))
-  const [categoryProducts, setCategoryProducts] = React.useState<Category[]>([])
+  const [categoryProducts, setCategoryProducts] = useState<Category[]>([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     dispatchRedux<any>(listCategoryProducts())
   }, [])
 
-  React.useEffect(() => {
+  useEffect(() => {
     setCategoryProducts(categories)
   }, [categories])
 

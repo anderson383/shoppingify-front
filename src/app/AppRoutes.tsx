@@ -10,7 +10,7 @@ interface IAppRoutes {
 export const APP_ROUTES: IAppRoutes[] = [
   {
     key: 'products',
-    path: 'products/*',
+    path: '/*',
     element: ProductsRouter
   },
   {

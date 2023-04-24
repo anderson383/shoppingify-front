@@ -1,22 +1,31 @@
 import styles from './styles.module.scss'
+import { ShoppingCar } from '../../../ShoppingCar/models/ShoppingCar'
+import { useNavigate } from 'react-router-dom'
 
-export const ItemShoppingHistory = () => {
+interface ItemShoppingHistoryProps  {
+  shopping: ShoppingCar
+}
+
+export const ItemShoppingHistory:React.FC<ItemShoppingHistoryProps> = (props) => {
+  const navigate = useNavigate()
+  const { shopping } = props
+
   const theme = 'light'
 
   return (
     <>
-      <div className={`${styles[theme + '__item']}`}>
+      <div className={`${styles[theme + '__item']}`} onClick={() => navigate('./' + shopping.id)}>
         <p className={`${styles[theme + '__item__name']}`}>
-          Grocery List
+          {shopping.name}
         </p>
         <div className={`${styles[theme + '__item__date-created']}`}>
           <span className="material-symbols-outlined">
           event_note
           </span>
-          Mon 27.8.2020
+          {shopping.datehistory}
         </div>
         <div className={`${styles[theme + '__item__status']}`}>
-          <span>completed</span>
+          <span>{shopping.status?.toLowerCase()}</span>
         </div>
         <div className={`${styles[theme + '__item__arrow-right']}`}>
           <span className="material-symbols-outlined">

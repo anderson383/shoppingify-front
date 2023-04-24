@@ -1,0 +1,16 @@
+@import 'src/assets/scss/colors.module.scss';
+@import 'src/assets/scss/mixins.scss';
+
+.light {
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: $gray;
+    margin-top: 20px;
+  }
+
+  &__content_categories {
+    margin-top: 54px;
+  }
+}
