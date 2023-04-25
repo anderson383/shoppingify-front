@@ -21,6 +21,7 @@
       padding: 18px 27px;
       position: relative;
       margin-top: 43px;
+      max-height: 140.6px;
 
       & > div {
         padding-left: 81px;
@@ -37,6 +38,10 @@
         position: absolute;
         top: -17px;
         left: 12px;
+      }
+
+      a {
+        max-height: 42px;
       }
 
     }
