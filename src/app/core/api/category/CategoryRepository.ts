@@ -7,6 +7,7 @@ export const getListCategoryProducts = async () => {
     return data
   } catch (e:any) {
     console.error('Hubo un error: ' + e.message)
+    return []
   }
 }
 
@@ -16,6 +17,7 @@ export const getListCategory = async () => {
     return data
   } catch (e:any) {
     console.error('Hubo un error: ' + e.message)
+    return []
   }
 }
 
@@ -25,5 +27,6 @@ export const getCategoryListHistory = async (id:string) => {
     return data
   } catch (error:any) {
     console.error('Hubo un error: ' + error.message)
+    return []
   }
 }
