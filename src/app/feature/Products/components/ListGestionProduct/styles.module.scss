@@ -92,11 +92,15 @@
       border: 2px solid $orange !important;
     }
 
+    a, button {
+      max-height: 56px;
+    }
+
     button {
       position: absolute;
       right: 0;
       top: 0;
-      height: 56px;
+      max-height: 56px;
     }
   }
 }

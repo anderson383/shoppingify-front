@@ -105,7 +105,7 @@ export const FormGestionProduct = () => {
           items={categoryList}
           />
         </form>
-        <div className="pb-34 flex justify-center">
+        <div className={`pb-34 flex justify-center ${styles[theme + '__actions']}`}>
           <Link to="../" className="btn btn-flat">
             cancel
           </Link>

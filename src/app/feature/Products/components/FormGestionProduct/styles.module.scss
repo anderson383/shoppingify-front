@@ -11,4 +11,10 @@
     @include d-flex-column();
     height: 100%;
   }
+
+  &__actions {
+    a, button {
+      max-height: 58px;
+    }
+  }
 }

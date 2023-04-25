@@ -38,22 +38,19 @@ export const Aside = () => {
           </span>
           </button>
         </div>
-        <div className={`h-100`} >
-          <Routes location={location}>
-            <Route path="*" element={<ListGestionProduct />} />
-            <Route path="prev/:id" element={<PrevGestionProduct />} />
-            <Route path="add" element={<FormGestionProduct />} />
-          </Routes>
-        </div>
-          {/* <TransitionGroup className={`h-100`} >
+          <TransitionGroup className={`h-100`} >
             <CSSTransition
               timeout={200}
               classNames={`page-transition`}
               key={location.pathname}
-            > */}
-              
-            {/* </CSSTransition>
-          </TransitionGroup> */}
+            >
+              <Routes location={location}>
+                <Route path="*" element={<ListGestionProduct />} />
+                <Route path="prev/:id" element={<PrevGestionProduct />} />
+                <Route path="add" element={<FormGestionProduct />} />
+              </Routes>
+            </CSSTransition>
+          </TransitionGroup>
       </aside>
     </>
   )

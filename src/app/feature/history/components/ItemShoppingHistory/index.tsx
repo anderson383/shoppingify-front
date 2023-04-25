@@ -18,19 +18,21 @@ export const ItemShoppingHistory:React.FC<ItemShoppingHistoryProps> = (props) =>
         <p className={`${styles[theme + '__item__name']}`}>
           {shopping.name}
         </p>
-        <div className={`${styles[theme + '__item__date-created']}`}>
-          <span className="material-symbols-outlined">
-          event_note
-          </span>
-          {shopping.datehistory}
-        </div>
-        <div className={`${styles[theme + '__item__status']}`}>
-          <span>{shopping.status?.toLowerCase()}</span>
-        </div>
-        <div className={`${styles[theme + '__item__arrow-right']}`}>
-          <span className="material-symbols-outlined">
-            arrow_forward_ios
-          </span>
+        <div className={`${styles[theme + '__item__info']}`}>
+          <div className={`${styles[theme + '__item__date-created']}`}>
+            <span className="material-symbols-outlined">
+            event_note
+            </span>
+            {shopping.datehistory}
+          </div>
+          <div className={`${styles[theme + '__item__status']}`}>
+            <span>{shopping.status?.toLowerCase()}</span>
+          </div>
+          <div className={`${styles[theme + '__item__arrow-right']}`}>
+            <span className="material-symbols-outlined">
+              arrow_forward_ios
+            </span>
+          </div>
         </div>
       </div>
     </>

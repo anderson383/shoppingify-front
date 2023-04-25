@@ -6,7 +6,7 @@ export const DetailHistoryPage = () => {
     <>
       <main>
         <div className="container mt-57">
-          <Link to="../" className="btn btn-flat btn-flat-primary" >
+          <Link to="../" className="btn btn-flat btn-flat-primary pl-0" >
             <span className="material-icons invert mr-5">
               arrow_right_alt
             </span>

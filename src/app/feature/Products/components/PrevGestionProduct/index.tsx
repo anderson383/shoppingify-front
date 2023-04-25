@@ -24,7 +24,7 @@ export const PrevGestionProduct = () => {
       <div className={`${styles[theme + '__aside-content']}`}>
         <div className={`${styles[theme + '__preview']} `}>
           <div className="px-44">
-            <Link to="/products" className="btn btn-flat btn-flat-primary" >
+            <Link to="/products" className="btn btn-flat btn-flat-primary pl-0" >
               <span className="material-icons invert mr-5">
                 arrow_right_alt
               </span>
