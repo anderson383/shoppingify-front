@@ -31,7 +31,7 @@ export const PrevGestionProduct = () => {
               back
             </Link>
           </div>
-          <div className="overflow-auto flex-1 px-44">
+          <div className="overflow-auto px-44 h-100">
             {
               product && (
                 <>
@@ -54,7 +54,7 @@ export const PrevGestionProduct = () => {
               )
             }
           </div>
-          <div className="py-34 flex justify-center px-44">
+          <div className={`${styles[theme + '__preview__actions']} py-34 flex justify-center px-44`}>
             <Button type="btn-flat">
               delete
             </Button>

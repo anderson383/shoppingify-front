@@ -14,8 +14,10 @@
 
     &__image-product {
       border-radius: 25px;
-      width: 300px;
-      height: 219px;
+      width: 100%;
+      max-width: 300px;
+      height: 100%;
+      max-height: 219px;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
@@ -38,6 +40,12 @@
         margin-top: 11px;
         font-size: 18px;
         font-weight: 500;
+      }
+    }
+
+    &__actions {
+      button {
+        max-height: 58.4px;
       }
     }
   }
