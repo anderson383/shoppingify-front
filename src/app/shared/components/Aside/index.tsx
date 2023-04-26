@@ -23,9 +23,7 @@ export const Aside = () => {
   const setShowMenu = (value:boolean) => dispatchRedux<any>( handleMenu(value) )
 
   useEffect(()=> {
-    if (isMobile) {
-      setShowMenu(false)
-    }
+    setShowMenu(!isMobile)
   }, [isMobile])
 
   return (

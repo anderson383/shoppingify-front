@@ -3,7 +3,7 @@ import {HANDLE_MENU, TypesMenuActions} from "../../actions/menu/MenuTypes";
 
 
 const initialState: StatusMenu = {
-  showMenu: true
+  showMenu: false
 }
 
 export const MenuReducer = (state = initialState, {type, payload}: TypesMenuActions): StatusMenu  => {
