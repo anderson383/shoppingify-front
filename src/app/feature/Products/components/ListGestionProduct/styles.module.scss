@@ -4,6 +4,22 @@
 
 .light {
 
+  &__close_button {
+    display: none;
+
+    @include media('mobile') {
+      display: block;
+    }
+    button {
+      cursor: pointer;
+      position: absolute;
+      top: 13px;
+      left: 10px;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
   &__aside-content {
     height: 100%;
     width: 100%;

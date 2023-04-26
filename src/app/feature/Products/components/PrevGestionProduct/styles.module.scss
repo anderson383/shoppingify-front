@@ -44,6 +44,11 @@
     }
 
     &__actions {
+      @include media('mobile') {
+        // padding: 0 ;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
       button {
         max-height: 58.4px;
       }

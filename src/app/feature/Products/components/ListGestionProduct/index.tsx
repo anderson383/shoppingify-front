@@ -15,12 +15,14 @@ import { toast } from 'react-toastify';
 import {ShoppingCar} from "../../../ShoppingCar/models/ShoppingCar";
 import {resetAllProductShoppingCar} from "../../../../core/redux/actions/product-shopping-car/ProductShopppingCarAction";
 import {saveProductShoppingCar} from "../../../../core/api/product-shopping-car/ProductShoppingCarRepository";
+import { handleMenu } from "../../../../core/redux/actions/menu/MenuAction";
 
 export const ListGestionProduct = () => {
   const dispatchRedux = useDispatch()
   const [loading, setLoading] = useState<boolean>(false)
   const [listRender, setListRender] = useState<Array<any>>([])
   const productShoppingCar = useSelector((status: StatusGeneral) => (status.product_shopping_car.list))
+  const setShowMenu = (value:boolean) => dispatchRedux<any>( handleMenu(value) )
   const form = useFormik({
     initialValues: {
       name: ''
@@ -69,6 +71,13 @@ export const ListGestionProduct = () => {
   const theme = 'light'
   return (
     <div className={`${styles[theme + '__aside-content']}`}>
+      <div className={`${styles[theme + '__close_button']}`}>
+        <button onClick={() => setShowMenu(false)}>
+        <span className="material-symbols-outlined">
+          close
+        </span>
+        </button>
+      </div>
       <div className={`${styles[theme + '__list']}`}>
         <div className="px-44">
           <div className={`${styles[theme + '__list__header']} `}>

@@ -31,13 +31,7 @@ export const Aside = () => {
   return (
     <>
       <aside className={`${styles[theme + '__aside']} ${clasesMenu}`}>
-        <div className={`${styles[theme + '__close_button']}`}>
-          <button onClick={() => setShowMenu(!showMenu)}>
-          <span className="material-symbols-outlined">
-            close
-          </span>
-          </button>
-        </div>
+        
           <TransitionGroup className={`h-100`} >
             <CSSTransition
               timeout={200}

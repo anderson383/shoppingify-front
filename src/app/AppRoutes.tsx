@@ -1,3 +1,4 @@
+import { AnalyticsRouter } from "./feature/Analytics/pages/AnalyticsRouter";
 import {ProductsRouter} from "./feature/Products/ProductsRouter";
 import {HistoryRouter} from "./feature/history/HistoryRouter";
 
@@ -17,5 +18,10 @@ export const APP_ROUTES: IAppRoutes[] = [
     key: 'history',
     path: 'history/*',
     element: HistoryRouter
+  },
+  {
+    key: 'analytics',
+    path: 'analytics/*',
+    element: AnalyticsRouter
   }
 ]

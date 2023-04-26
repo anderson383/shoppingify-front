@@ -37,7 +37,7 @@ export const HeaderLeft = () => {
     {
       icon: 'insert_chart_outlined',
       tooltip: 'statistics',
-      path: '/statistics'
+      path: '/analytics'
     }
   ]
 
