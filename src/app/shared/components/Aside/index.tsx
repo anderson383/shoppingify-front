@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-import {useEffect} from "react";
+import {useEffect, useLayoutEffect} from "react";
 
 import {FormGestionProduct} from "../../../feature/Products/components/FormGestionProduct";
 import {PrevGestionProduct} from "../../../feature/Products/components/PrevGestionProduct";
@@ -22,7 +22,8 @@ export const Aside = () => {
   const clasesMenu = [ !showMenu ? styles[theme + '__aside__close'] : '' ]
   const setShowMenu = (value:boolean) => dispatchRedux<any>( handleMenu(value) )
 
-  useEffect(()=> {
+  useLayoutEffect(()=> {
+    console.log(isMobile, 'mobile')
     setShowMenu(!isMobile)
   }, [isMobile])
 
