@@ -1,12 +1,11 @@
-import {Product} from "../../../../feature/Products/models/Product";
-import {GET_PRODUCT} from "./ProductTypes";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { Product } from "../../../../components/features/Products/models/Product";
+import { repositoryContainer } from "../../../../services/config/inversify.config";
+import { TYPES } from "../../../../services/config/types";
+import { ShopRepository } from "../../../../services/repositories/shop.repository";
 
 
-export const getOneProduct = (product: Product) => {
-  return async (dispatch: any) => {
-    dispatch({
-      type: GET_PRODUCT,
-      payload: await getOneProduct(product)
-    })
-  }
-}
+export const setDetalleContacto = createAsyncThunk('shop/setDetalleContacto', async (product: Product) => {
+  const repository = repositoryContainer.get(TYPES.SHOP_REPOSITORY) as ShopRepository
+  return await repository.getOneProduct(product.id)
+})

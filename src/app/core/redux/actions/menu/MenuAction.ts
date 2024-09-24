@@ -1,10 +1,9 @@
-import {HANDLE_MENU} from "./MenuTypes";
+import { PayloadAction } from "@reduxjs/toolkit";
+import { StatusMenu } from "../../models/StatusMenu";
 
-export const handleMenu = (value:boolean) => {
-  return async (dispatch:any) => {
-    dispatch({
-        type: HANDLE_MENU,
-        payload: value
-    })
-  }
+export const handleMenuAction = (state:StatusMenu, { payload }: PayloadAction<boolean>):StatusMenu => {
+  return ({
+    ...state,
+    showMenu: payload
+  })
 }

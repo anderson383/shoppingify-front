@@ -1,0 +1,7 @@
+const TYPES = {
+  SHOP_REPOSITORY: Symbol.for('SHOP_REPOSITORY'),
+  CONFIG_REPOSITORY: Symbol.for('CONFIG_REPOSITORY'),
+  AUTH_REPOSITORY: Symbol.for('AUTH_REPOSITORY'),
+};
+
+export { TYPES };

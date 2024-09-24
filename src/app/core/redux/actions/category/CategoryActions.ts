@@ -1,13 +1,10 @@
-import {getListCategoryProducts} from "../../../api/category/CategoryRepository";
-import {LIST_CATEGORIES} from "./CategoryTypes";
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import { repositoryContainer } from "../../../../services/config/inversify.config";
+import { TYPES } from "../../../../services/config/types";
+import { ConfigRepository } from "../../../../services/repositories/config.repository";
 
-
-export const listCategoryProducts = () => {
-  return  async (dispatch: any) => {
-    dispatch({
-      type: LIST_CATEGORIES,
-      payload: await getListCategoryProducts()
-    })
-  }
-}
+export const listCategoryProducts = createAsyncThunk('config/listCategoryProducts', async () => {
+  const repository = repositoryContainer.get(TYPES.CONFIG_REPOSITORY) as ConfigRepository
+  return  await repository.getListCategoryProducts()
+})
 

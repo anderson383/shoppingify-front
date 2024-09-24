@@ -1,12 +1,22 @@
-import {createStore, compose, applyMiddleware} from "redux";
-import rootReducer from './reducers/index'
-import thunk from 'redux-thunk';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { menuSlice } from './slices/Menu.slices';
+import { categorySlice } from './slices/Category.slices';
+import { productSlice } from './slices/Product.slice';
+import { productShopCardSlice } from './slices/ProductShoppingCard.slice';
 
-declare const window: any;
+export const rootReducer = combineReducers({
+  category: categorySlice.reducer,
+  product: productSlice.reducer,
+  product_shopping_car: productShopCardSlice.reducer,
+  menu: menuSlice.reducer
+});
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+type RootState = ReturnType<typeof rootReducer>;
 
-export const store = createStore(
-  rootReducer,
-  composeEnhancers(applyMiddleware(thunk))
-)
+const store = configureStore<RootState>({
+  reducer: rootReducer
+})
+
+export type RootStateType = ReturnType<typeof store.getState>
+
+export default store;

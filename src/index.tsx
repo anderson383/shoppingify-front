@@ -8,9 +8,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-    <div className="wrapper-page">
-      <App />
-    </div>
+  <div className="wrapper-page">
+    <App />
+  </div>
 );
 
 reportWebVitals();

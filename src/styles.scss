@@ -1,12 +1,17 @@
 @import 'src/assets/scss/colors.module.scss';
 @import 'src/assets/scss/mixins.scss';
 
+
+* {
+  box-sizing: border-box;
+}
 body, html {
   overflow-x: hidden;
+
 }
 
-html {
-    height: 100%;
+body, html {
+   height: 100vh;
 }
 
 body {
@@ -220,9 +225,6 @@ h1, h2, h3, h4, h5, h6, p {
   animation: 0.5s fadeOut forwards;
 }
 
-
-
-
 .page-transition-enter {
   opacity: 0;
   z-index: 1;
@@ -241,6 +243,12 @@ h1, h2, h3, h4, h5, h6, p {
   display: none;
 }
 
+
+.text-error {
+  color: #EB5757;
+  font-size: 12px;
+  font-weight: bold;
+}
 /* @keyframes fadeIn {
   from {
     opacity: 0;
