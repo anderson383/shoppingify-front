@@ -3,7 +3,6 @@
 echo "Construyendo la aplicación..."
 npm run build
 
-# Asegúrate de que el build se ha creado
 if [ ! -d "build" ]; then
   echo "Error: el directorio build no existe."
   exit 1
