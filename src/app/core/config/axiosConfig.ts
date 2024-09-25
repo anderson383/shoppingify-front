@@ -1,6 +1,6 @@
 import axios from "axios";
 export const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BASE_API,
+  baseURL: 'https://shoppingify-back-production.up.railway.app/api',
   timeout: 15000,
   headers: {
     Accept: 'application/json',
