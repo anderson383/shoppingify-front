@@ -26,6 +26,8 @@
   - [Axios](https://axios-http.com/)
   - [React Router](https://reactrouter.com/)
   - [Sass](https://sass-lang.com/)
+  - **GIT HUB ACTIONS**
+  - **AWS EC2**
 
 - **Herramientas de Desarrollo:**
   - [GitFlow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow)
