@@ -74,9 +74,9 @@ export const PrevGestionProduct = () => {
             }
           </div>
           <div className={`${styles[theme + '__preview__actions']} py-34 flex justify-center px-44`}>
-            <button className="btn btn-flat" disabled>
+            {/* <button className="btn btn-flat" disabled>
               delete
-            </button>
+            </button> */}
             <button onClick={() => addShoppingCar()} className="btn btn-primary">
               Add to list
             </button>

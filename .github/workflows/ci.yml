@@ -1,0 +1,23 @@
+name: CI/CD for React app
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:   
+
+        node-version: 16
+    - name: Install dependencies
+      run: npm install
+    - name: Build   
+ the app
+      run: npm run build
+    - name: Deploy to S3 (simulated with LocalStack)
+      run: aws s3 sync build s3://shop-bucket --endpoint-url http://localhost:4572 --region us-east-1
