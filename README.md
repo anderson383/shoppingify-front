@@ -2,7 +2,7 @@
 
 ## Descripción General
 
-**Pago en Tienda** Esta aplicación de un challenge realizado [devChallenges](https://legacy.devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x) el cual tomé funcionalidad y diseño para la prueba
+**Shoppingify** Esta aplicación de un challenge realizado [devChallenges](https://legacy.devchallenges.io/challenges/mGd5VpbO4JnzU6I9l96x) el cual tomé funcionalidad y diseño para la prueba
 
 ## Características
 
@@ -32,7 +32,7 @@
   - [TypeScript](https://www.typescriptlang.org/)
 
 - **Servicio de Despliegue en la Nube:**
-  - [Railway](https://railway.app/)
+  - [aws]()
 
 ## Instalación
 
@@ -55,13 +55,20 @@ Para comenzar con la aplicación de Pago en Tienda, sigue estos pasos:
 
    ```bash
    npm start
-  run in port http://localhost:3000/
+   run in port http://localhost:3000/
 5. **Execute build:**
+
    ```bash
    npm run build
 ## Production Server
-
 This project is currently located at the following URL.
 
 - **Railway server:**
-  - [Store payment](https://store-payment-production.up.railway.app/)
+  - [Shoppingify app](http://3.21.104.234:3000/)
+
+```bash
+#Credenciales de acceso al sistema
+{
+    "email": "ander@gmail.com",
+    "password": "holamundo.123"
+}
