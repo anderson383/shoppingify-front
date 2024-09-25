@@ -6,12 +6,13 @@ import { StatusGeneral } from '../../../../core/redux/models/StatusGeneral';
 import { NavList } from '../../atoms/NavList';
 import { ToolTip } from '../../atoms/ToolTip';
 import { handleMenuActionSlice } from '../../../../core/redux/slices/Menu.slices';
+import { useNavigate } from "react-router-dom";
 export const HeaderLeft = () => {
   let theme = 'light'
 
   const dispatchRedux = useDispatch()
 
-
+  const navigate = useNavigate()
   const {menu: {showMenu}, product_shopping_car} = useSelector((status:StatusGeneral) => ({
     menu: status.menu,
     product_shopping_car: status.product_shopping_car
@@ -40,11 +41,16 @@ export const HeaderLeft = () => {
     dispatchRedux<any>(handleMenuActionSlice(!showMenu))
   }
 
+  const handleSession = () => {
+    localStorage.removeItem('token')
+    navigate('/auth/login')
+  }
+
   return (
     <>
       <header className={`${styles[theme + '__header']}`}>
-        <div className="mt-50">
-          <img src={logo} alt="Logo" />
+        <div className="mt-50" style={ {cursor: 'pointer'} } title="Cerrar sesión">
+          <img src={logo} alt="Logo" onClick={() => handleSession()} />
         </div>
         <nav>
           <NavList>
